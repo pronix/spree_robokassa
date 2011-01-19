@@ -9,7 +9,7 @@ class Gateway::RobokassaController < Spree::BaseController
     payment = @order.payments.create!(:amount => 0,  :payment_method_id => @gateway.id)
 
     if @order.blank? || @gateway.blank?
-      flash[:error] = I18n.t("Invalid arguments")
+      flash[:error] = I18n.t("invalid_arguments")
       redirect_to :back
     else
       @signature =  Digest::MD5.hexdigest([ @gateway.options[:mrch_login],
@@ -51,7 +51,7 @@ class Gateway::RobokassaController < Spree::BaseController
   private
 
   def load_order
-    @order   = Order.find_by_id(params["InvId"])
+    @order =  Order.find_by_id(params["InvId"])
     @gateway = @order && @order.payments.first.payment_method
   end
 

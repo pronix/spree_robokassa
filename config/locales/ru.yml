@@ -9,3 +9,5 @@ ru-RU:
   password1: Пароль 1
   password2: Пароль 2
   mrch_login: MerchantLogin login магазина (обязательный параметр)
+  invalid_arguments: Invalid Arguments
+  payment_fail: PAYMENT FAIL

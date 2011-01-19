@@ -8,3 +8,6 @@ en:
     fail_url: Fail URL
   password1: Password 1
   password2: Password 1
+  mrch_login: MerchantLogin login
+  invalid_arguments: Invalid Arguments
+  payment_fail: PAYMENT FAIL
