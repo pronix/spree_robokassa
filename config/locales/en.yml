@@ -1,0 +1,10 @@
+---
+en:
+  robokassa:
+    details_of_payment: 'Payment Order %{order_number}'
+    pay: Pay
+    success_url: Success URL
+    result_url: Result URL
+    fail_url: Fail URL
+  password1: Password 1
+  password2: Password 1

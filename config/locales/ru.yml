@@ -1,0 +1,11 @@
+---
+ru-RU:
+  robokassa:
+    details_of_payment: 'Оплата заказа %{order_number}'
+    pay: Оплата Робокасса
+    success_url: Success URL
+    result_url: Result URL
+    fail_url: Fail URL
+  password1: Пароль 1
+  password2: Пароль 2
+  mrch_login: MerchantLogin login магазина (обязательный параметр)
