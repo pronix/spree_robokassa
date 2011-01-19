@@ -10,9 +10,15 @@ class Gateway::Robokassa < Gateway
   def method_type
     "robokassa"
   end
+
   def test?
     options[:test_mode] == true
   end
+
+  def url
+    self.test? ? "http://test.robokassa.ru/Index.aspx" : "https://merchant.roboxchange.com/Index.aspx"
+  end
+
 
   def desc
     "<p>

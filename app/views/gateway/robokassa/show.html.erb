@@ -1,12 +1,12 @@
 <% content_for :page_title do %>
 <h1 class="font-41 black"><%= t("robokassa.pay")%></h1>
 <% end %>
-<%= form_tag "https://merchant.roboxchange.com/Index.aspx", :method => "POST" do %>
+<%= form_tag @gateway.url, :method => "POST" do %>
 <%= hidden_field_tag(:"MrchLogin", @gateway.options[:mrch_login]) %>
 <%= hidden_field_tag(:"OutSum", @order.total)%>
 <%= hidden_field_tag(:"InvId", @order.id)%>
 <%= hidden_field_tag(:"Desc", I18n.t("robokassa.details_of_payment", :order_number => @order.number)) %>
-<%= hidden_field_tag(:"SignatureValue", @signature %>
+<%= hidden_field_tag(:"SignatureValue", @signature) %>
 <h1 class="font-41 black"><%= "#{t('order')} #{@order.number}" %></h1>
 <%= render :partial => 'shared/order_details', :locals => {:order => @order} %>
 <div class="clear"></div>

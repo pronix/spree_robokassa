@@ -14,7 +14,7 @@ class Gateway::RobokassaController < Spree::BaseController
     else
       @signature =  Digest::MD5.hexdigest([ @gateway.options[:mrch_login],
                                             @order.total, @order.id, @gateway.options[:password1]
-                                          ].join(':'))
+                                          ].join(':')).upcase
       render :action => :show
     end
   end
@@ -56,7 +56,7 @@ class Gateway::RobokassaController < Spree::BaseController
   end
 
   def valid_signature?(key)
-    params["SignatureValue"] ==   Digest::MD5.hexdigest([params["OutSum"], params["InvId"], key ].join(':'))
+    params["SignatureValue"] ==   Digest::MD5.hexdigest([params["OutSum"], params["InvId"], key ].join(':')).upcase
   end
 
 end
