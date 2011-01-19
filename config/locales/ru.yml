@@ -11,3 +11,4 @@ ru-RU:
   mrch_login: MerchantLogin login магазина (обязательный параметр)
   invalid_arguments: Invalid Arguments
   payment_fail: PAYMENT FAIL
+  payment_success: Оплата выполнена.

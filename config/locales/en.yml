@@ -11,3 +11,4 @@ en:
   mrch_login: MerchantLogin login
   invalid_arguments: Invalid Arguments
   payment_fail: PAYMENT FAIL
+  payment_success: Payment Success
