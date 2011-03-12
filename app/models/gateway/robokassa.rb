@@ -22,9 +22,9 @@ class Gateway::Robokassa < Gateway
 
   def desc
     "<p>
-      <label> #{I18n.t('robokassa.success_url')}: </label> htpp://[domain]/gateway/robokassa/success<br />
+      <label> #{I18n.t('robokassa.success_url')}: </label> http://[domain]/gateway/robokassa/success<br />
       <label> #{I18n.t('robokassa.result_url')}: </label> http://[domain]/gateway/robokassa/result<br />
-      <label> #{I18n.t('robokassa.fail_url')}: </label> http://[domain]/gateway/robokassa/fails<br />
+      <label> #{I18n.t('robokassa.fail_url')}: </label> http://[domain]/gateway/robokassa/fail<br />
     </p>"
   end
 end
