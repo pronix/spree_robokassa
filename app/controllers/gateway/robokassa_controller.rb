@@ -1,7 +1,8 @@
 class Gateway::RobokassaController < Spree::BaseController
   skip_before_filter :verify_authenticity_token, :only => [:result, :success, :fail]
   before_filter :load_order,                     :only => [:result, :success, :fail]
-
+  ssl_required :show
+  
   def show
     @order =  Order.find(params[:order_id])
     @gateway = @order.available_payment_methods.find{|x| x.id == params[:gateway_id].to_i }
