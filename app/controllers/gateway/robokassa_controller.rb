@@ -6,8 +6,6 @@ class Gateway::RobokassaController < Spree::BaseController
   def show
     @order =  Order.find(params[:order_id])
     @gateway = @order.available_payment_methods.find{|x| x.id == params[:gateway_id].to_i }
-    @order.payments.destroy_all
-    payment = @order.payments.create!(:amount => 0,  :payment_method_id => @gateway.id)
 
     if @order.blank? || @gateway.blank?
       flash[:error] = I18n.t("invalid_arguments")
@@ -46,14 +44,14 @@ class Gateway::RobokassaController < Spree::BaseController
 
   def fail
     flash.now[:error] = t("payment_fail")
-    redirect_to @order.blank? ? root_url : edit_order_checkout_url(@order, :step => "payment")
+    redirect_to @order.blank? ? root_url : checkout_state_path("payment")
   end
 
   private
 
   def load_order
-    @order =  Order.find_by_id(params["InvId"])
-    @gateway = @order && @order.payments.first.payment_method
+    @order = Order.find_by_id(params["InvId"])
+    @gateway = Gateway::Robokassa.current
   end
 
   def valid_signature?(key)

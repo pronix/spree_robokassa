@@ -18,7 +18,10 @@ class Gateway::Robokassa < Gateway
   def url
     self.test? ? "http://test.robokassa.ru/Index.aspx" : "https://merchant.roboxchange.com/Index.aspx"
   end
-
+  
+  def self.current
+    self.where(:type => self.to_s, :environment => Rails.env, :active => true).first
+  end
 
   def desc
     "<p>
