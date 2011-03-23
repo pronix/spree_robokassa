@@ -20,7 +20,7 @@ class Gateway::RobokassaController < Spree::BaseController
 
   def result
     if @order && @gateway && valid_signature?(@gateway.options[:password2])
-      payment = @order.payments.first
+      payment = @order.payments.build(:payment_method => @order.payment_method)
       payment.state = "completed"
       payment.amount = params["OutSum"].to_f
       payment.save
