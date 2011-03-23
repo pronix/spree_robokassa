@@ -1,8 +1,8 @@
 ---
-ru-RU:
+ru:
   robokassa:
     details_of_payment: 'Оплата заказа %{order_number}'
-    pay: Оплата Робокасса
+    pay: Оплата
     success_url: Success URL
     result_url: Result URL
     fail_url: Fail URL
@@ -10,5 +10,5 @@ ru-RU:
   password2: Пароль 2
   mrch_login: MerchantLogin login магазина (обязательный параметр)
   invalid_arguments: Invalid Arguments
-  payment_fail: PAYMENT FAIL
-  payment_success: Оплата выполнена.
+  payment_fail: "Не удалось провести оплату"
+  payment_success: "Оплата выполнена успешно"
