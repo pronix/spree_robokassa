@@ -1,5 +1,5 @@
 ---
-ru-RU:
+ru:
   robokassa:
     details_of_payment: 'Оплата заказа %{order_number}'
     pay: Оплата Робокасса
