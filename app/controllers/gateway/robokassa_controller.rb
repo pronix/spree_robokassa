@@ -55,7 +55,7 @@ class Gateway::RobokassaController < Spree::BaseController
   end
 
   def valid_signature?(key)
-    params["SignatureValue"] ==   Digest::MD5.hexdigest([params["OutSum"], params["InvId"], key ].join(':')).upcase
+    params["SignatureValue"].upcase == Digest::MD5.hexdigest([params["OutSum"], params["InvId"], key ].join(':')).upcase
   end
 
 end
