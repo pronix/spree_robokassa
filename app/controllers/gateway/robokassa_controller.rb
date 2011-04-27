@@ -26,6 +26,8 @@ class Gateway::RobokassaController < Spree::BaseController
       payment.save
       @order.save!
       @order.next! until @order.state == "complete"
+      @order.update!
+      
       render :text => "OK#{@order.id}"
     else
       render :text => "Invalid Signature"
