@@ -45,7 +45,7 @@ class Gateway::RobokassaController < Spree::BaseController
   end
 
   def fail
-    flash.now[:error] = t("payment_fail")
+    flash[:error] = t("payment_fail")
     redirect_to @order.blank? ? root_url : checkout_state_path("payment")
   end
 
