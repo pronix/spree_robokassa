@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_robokassa'
-  s.version     = '0.50.0'
+  s.version     = '0.50.1'
   s.summary     = 'Adds payment method for robokassa.ru'
   #s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.8.7'
@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors           = ['Roman Smirnov', 'parallel588']
   # s.email             = 'david@loudthinking.com'
   s.homepage          = 'https://github.com/romul/spree_robokassa'
-  # s.rubyforge_project = 'actionmailer'
+  # s.rubyforge_project = 'spree_robokassa'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
