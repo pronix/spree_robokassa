@@ -4,7 +4,7 @@ class Gateway::RobokassaController < Spree::BaseController
   ssl_required :show
   
   def show
-    @order =  Order.find(params[:order_id])
+    @order =  Spree::Order.find(params[:order_id])
     @gateway = @order.available_payment_methods.detect{|x| x.id == params[:gateway_id].to_i }
 
     if @order.blank? || @gateway.blank?
@@ -52,7 +52,7 @@ class Gateway::RobokassaController < Spree::BaseController
   private
 
   def load_order
-    @order = Order.find_by_id(params["InvId"])
+    @order = Spree::Order.find_by_id(params["InvId"])
     @gateway = Gateway::Robokassa.current
   end
 
