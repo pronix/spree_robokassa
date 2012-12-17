@@ -1,4 +1,4 @@
-class Gateway::Robokassa < Gateway
+class Gateway::Robokassa < Spree::Gateway
   preference :password1, :string
   preference :password2, :string
   preference :mrch_login, :string
