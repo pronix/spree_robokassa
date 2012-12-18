@@ -1,4 +1,4 @@
-class Gateway::RobokassaController < Spree::BaseController
+class Spree::Gateway::RobokassaController < Spree::BaseController
   skip_before_filter :verify_authenticity_token, :only => [:result, :success, :fail]
   before_filter :load_order,                     :only => [:result, :success, :fail]
   ssl_required :show

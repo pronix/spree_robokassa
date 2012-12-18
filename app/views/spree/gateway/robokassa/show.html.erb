@@ -8,7 +8,7 @@
 <%= hidden_field_tag(:"Desc", I18n.t("robokassa.details_of_payment", :order_number => @order.number)) %>
 <%= hidden_field_tag(:"SignatureValue", @signature) %>
 <h1 class="font-41 black"><%= "#{t('order')} #{@order.number}" %></h1>
-<%= render :partial => 'shared/order_details', :locals => {:order => @order} %>
+<%= render :partial => 'spree/shared/order_details', :locals => {:order => @order} %>
 <div class="clear"></div>
 <div class="font-41">&nbsp;</div>
 <button style="margin-left: 350px;" class="button_buy left" href="">
