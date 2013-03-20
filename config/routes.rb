@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Spree::Core::Engine.routes.draw do
   # Add your extension routes here
   namespace :gateway do
     match '/robokassa/:gateway_id/:order_id' => 'robokassa#show',    :as => :robokassa

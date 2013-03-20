@@ -1,7 +1,9 @@
-class Gateway::Robokassa < Gateway
+class Gateway::Robokassa < Spree::Gateway
   preference :password1, :string
   preference :password2, :string
   preference :mrch_login, :string
+
+  attr_accessible :preferred_password1, :preferred_password2, :preferred_mrch_login
 
   def provider_class
     self.class

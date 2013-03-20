@@ -1,5 +1,5 @@
 require 'spree_core'
-require 'spree_robokassa_hooks'
+#require 'spree_robokassa_hooks'
 
 module SpreeRobokassa
   class Engine < Rails::Engine
@@ -10,7 +10,7 @@ module SpreeRobokassa
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
         Rails.env.production? ? require(c) : load(c)
       end
-      Gateway::Robokassa.register
+      config.spree.payment_methods += [ Gateway::Robokassa ]
     end
 
     config.to_prepare &method(:activate).to_proc

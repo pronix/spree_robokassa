@@ -1,3 +1,5 @@
+require 'fileutils'
+
 namespace :spree_robokassa do
   desc "Copies all migrations and assets (NOTE: This will be obsolete with Rails 3.1)"
   task :install do
@@ -11,7 +13,7 @@ namespace :spree_robokassa do
       source = File.join(File.dirname(__FILE__), '..', '..', 'db')
       destination = File.join(Rails.root, 'db')
       puts "INFO: Mirroring assets from #{source} to #{destination}"
-      Spree::FileUtilz.mirror_files(source, destination)
+      FileUtils.cp(source, destination)
     end
 
     desc "Copies all assets (NOTE: This will be obsolete with Rails 3.1)"
@@ -19,7 +21,7 @@ namespace :spree_robokassa do
       source = File.join(File.dirname(__FILE__), '..', '..', 'public')
       destination = File.join(Rails.root, 'public')
       puts "INFO: Mirroring assets from #{source} to #{destination}"
-      Spree::FileUtilz.mirror_files(source, destination)
+      FileUtils.cp(source, destination)
     end
   end
 

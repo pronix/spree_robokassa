@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_robokassa'
-  s.version     = '0.50.1'
+  s.version     = '0.50.2'
   s.summary     = 'Adds payment method for robokassa.ru'
   #s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.8.7'
@@ -17,5 +17,5 @@ Gem::Specification.new do |s|
   s.require_paths = [ 'lib' ]
   s.requirements << 'none'
 
-  s.add_dependency('spree_core', '>= 0.30.1')
+  s.add_dependency('spree_core', '>= 0.40.0')
 end
