@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   #s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.8.7'
 
-  s.authors           = ['Roman Smirnov', 'parallel588']
-  # s.email             = 'david@loudthinking.com'
+  s.authors           = ['parallel588','AskarZinurov']
+  s.email             = 'pronix.service@gmail.com'
   s.homepage          = 'https://github.com/romul/spree_robokassa'
   # s.rubyforge_project = 'spree_robokassa'
 
